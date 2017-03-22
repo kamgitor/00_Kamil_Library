@@ -36,15 +36,15 @@ namespace SongBook
 	{
 		// ***********************************************************************************************
 		// Odpala okno - wskaz z dysku nazwe pliku - plik z sciezka
-		// name - plik poprzednio wskazany
+		// path - sciezka odpalenia okna
 		// zwraca nazwe pliku z sciezka
-		public static string GetFileName(string name)
+		public static string GetFileName(string path)
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog();
-			string path = name;
+			// string path = name;
 
 			// openFileDialog.FileName = "K:\\ProjektyC#\\17_LangKamConverter\\LangKamConverter\\bin\\debug\\oko.txt";
-			if ((name == "") || (name == null))
+			if ((path == "") || (path == null))
 			{
 				path = Directory.GetCurrentDirectory();
 				// path += "\\filename";				// ustawianie sciezki startowej - musi byc wybrana nazwa pliku
@@ -56,7 +56,7 @@ namespace SongBook
 			if (openFileDialog.ShowDialog() == true)
 				return openFileDialog.FileName;
 			else
-				return name;
+				return path;
 
 		}	// GetFileName
 
